@@ -30,7 +30,7 @@ class SettingsPage extends StatelessWidget {
         body: ListView(children: <Widget>[
           Center(
             child: Image.network(
-                "https://w7.pngwing.com/pngs/845/180/png-transparent-unified-payments-interface-bhim-national-payments-corporation-of-india-wallets-text-trademark-logo.png"),
+                "https://images-workbench.99static.com/VW9gHVoyoSouVPUety8NrzIZMOE=/99designs-contests-attachments/66/66392/attachment_66392192"),
           ),
           ListTile(
             contentPadding: EdgeInsets.only(
@@ -43,6 +43,9 @@ class SettingsPage extends StatelessWidget {
               child: Icon(Icons.person),
             ),
             title: Text("P R O F I L E"),
+            onTap: () {
+              print("you Pressed Profile");
+            },
           ),
           ListTile(
             contentPadding: EdgeInsets.only(
@@ -55,6 +58,9 @@ class SettingsPage extends StatelessWidget {
               child: Icon(Icons.wallet),
             ),
             title: Text("W A L L E T"),
+            onTap: () {
+              print("you Pressed Wallet");
+            },
           ),
           ListTile(
             contentPadding: EdgeInsets.only(
@@ -67,6 +73,9 @@ class SettingsPage extends StatelessWidget {
               child: Icon(Icons.list),
             ),
             title: Text("T R A N S A C T I O N S"),
+            onTap: () {
+              print("you Pressed Transactions");
+            },
           )
         ]));
   }

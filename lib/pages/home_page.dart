@@ -2,7 +2,6 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutterapp/pages/settings_page.dart';
-import 'package:flutterapp/pages/home_page.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -40,8 +39,11 @@ class HomePage extends StatelessWidget {
             backgroundColor: Colors.blueGrey,
             child: Column(children: <Widget>[
               DrawerHeader(
-                  child: Image.network(
-                "https://w7.pngwing.com/pngs/845/180/png-transparent-unified-payments-interface-bhim-national-payments-corporation-of-india-wallets-text-trademark-logo.png",
+                  child: Expanded(
+                flex: 10,
+                child: Image.network(
+                  "https://images-workbench.99static.com/VW9gHVoyoSouVPUety8NrzIZMOE=/99designs-contests-attachments/66/66392/attachment_66392192",
+                ),
               )),
               ListTile(
                 leading: Icon(Icons.home),
@@ -68,18 +70,23 @@ class HomePage extends StatelessWidget {
                 child: Card(
                   margin: const EdgeInsets.all(0),
                   color: Colors.teal,
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(16)),
+                  // shape: RoundedRectangleBorder(
+                  //     borderRadius: BorderRadius.circular(16)),
                   child: const Center(
+                      child: Card(
+                    color: Colors.limeAccent,
+                    margin: EdgeInsets.all(30),
+                    // shape: RoundedRectangleBorder(
+                    //     borderRadius: BorderRadius.all(20)),
                     child: Text(
                       "The best ways to pay your payments any time and any where you want",
                       textAlign: TextAlign.center,
                       style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 20,
+                          color: Colors.teal,
+                          fontSize: 30,
                           fontWeight: FontWeight.bold),
                     ),
-                  ),
+                  )),
                 )),
             const SizedBox(
                 height: 380,
