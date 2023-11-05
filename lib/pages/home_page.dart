@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, avoid_print
 
 import 'package:flutter/material.dart';
 import 'package:flutterapp/pages/settings_page.dart';
@@ -25,8 +25,7 @@ class HomePage extends StatelessWidget {
                   size: 40,
                 ),
                 onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => SettingsPage()));
+                  Navigator.pushNamed(context, '/settingspage');
                 },
                 padding: const EdgeInsets.only(
                   right: 20,
@@ -49,16 +48,14 @@ class HomePage extends StatelessWidget {
                 leading: Icon(Icons.home),
                 title: Text("H O M E"),
                 onTap: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => HomePage()));
+                  Navigator.pushNamed(context, '/homepage');
                 },
               ),
               ListTile(
                 leading: Icon(Icons.settings),
                 title: Text("S E T T I N G S"),
                 onTap: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => SettingsPage()));
+                  Navigator.pushNamed(context, '/settingspage');
                 },
               )
             ]),
@@ -72,20 +69,65 @@ class HomePage extends StatelessWidget {
                   color: Colors.teal,
                   // shape: RoundedRectangleBorder(
                   //     borderRadius: BorderRadius.circular(16)),
-                  child: const Center(
-                      child: Card(
-                    color: Colors.limeAccent,
-                    margin: EdgeInsets.all(30),
-                    // shape: RoundedRectangleBorder(
-                    //     borderRadius: BorderRadius.all(20)),
-                    child: Text(
-                      "The best ways to pay your payments any time and any where you want",
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                          color: Colors.teal,
-                          fontSize: 30,
-                          fontWeight: FontWeight.bold),
-                    ),
+                  child: Center(
+                      child: Column(
+                    children: [
+                      Container(
+                        decoration: BoxDecoration(
+                          shape: BoxShape.rectangle,
+                          borderRadius: BorderRadius.all(Radius.circular(20)),
+                          color: Colors.limeAccent,
+                        ),
+                        width: 400,
+                        height: 200,
+                        margin: EdgeInsets.all(20),
+                        child: Column(children: [
+                          Card(
+                            // shape: BeveledRectangleBorder(
+                            //     borderRadius: BorderRadius.circular(20)),
+                            margin: EdgeInsets.all(40),
+                            color: Colors.limeAccent,
+                            child: Text("Your Balance Is",
+                                style: TextStyle(
+                                    fontSize: 35,
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.teal)),
+                          ),
+                          Card(
+                            color: Colors.limeAccent,
+                            child: Text("0",
+                                style: TextStyle(
+                                    fontSize: 35,
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.teal)),
+                          )
+                        ]),
+                      ),
+                      Card(
+                          color: Colors.limeAccent,
+                          margin: EdgeInsets.all(20),
+                          shape: RoundedRectangleBorder(
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(20))),
+                          child: Row(
+                            children: [
+                              Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Center(
+                                    child: IconButton(
+                                        onPressed: () {
+                                          print("TopUp Wallet");
+                                        },
+                                        icon: Icon(Icons.credit_card,
+                                            size: 40, color: Colors.teal)),
+                                  ),
+                                  Center(child: Text("Top Up"))
+                                ],
+                              )
+                            ],
+                          ))
+                    ],
                   )),
                 )),
             const SizedBox(
@@ -98,15 +140,140 @@ class HomePage extends StatelessWidget {
                       borderRadius: BorderRadius.only(
                           topLeft: Radius.circular(20),
                           topRight: Radius.circular(20))),
-                  child: Center(
-                      child: Image(
-                    image: NetworkImage(
-                        "https://i0.wp.com/365webresources.com/wp-content/uploads/2022/12/Payment-Methods-Dark-Icons.webp?ssl=1"),
-                    height: 600,
-                    width: 400,
-                  )),
+                  child: Column(children: [
+                    Padding(
+                      padding: EdgeInsets.all(10),
+                    ),
+                    Expanded(
+                        child: Row(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: <Widget>[
+                          SizedBox(
+                            height: 50,
+                            child: Card(
+                              color: Colors.limeAccent,
+                              child: Text(
+                                "Transaction Info",
+                                style:
+                                    TextStyle(fontSize: 25, color: Colors.teal),
+                              ),
+                            ),
+                          ),
+                          SizedBox(
+                            height: 50,
+                            child: Card(
+                              color: Colors.limeAccent,
+                              child: Text(
+                                "06/11/2023",
+                                style:
+                                    TextStyle(fontSize: 25, color: Colors.teal),
+                              ),
+                            ),
+                          )
+                        ])),
+                    Expanded(
+                        child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: <Widget>[
+                          SizedBox(
+                            height: 50,
+                            child: Card(
+                              color: Colors.limeAccent,
+                              child: Text(
+                                "Transaction Info",
+                                style:
+                                    TextStyle(fontSize: 25, color: Colors.teal),
+                              ),
+                            ),
+                          ),
+                          SizedBox(
+                            height: 50,
+                            child: Card(
+                              color: Colors.limeAccent,
+                              child: Text(
+                                "06/11/2023",
+                                style:
+                                    TextStyle(fontSize: 25, color: Colors.teal),
+                              ),
+                            ),
+                          )
+                        ])),
+                    Expanded(
+                        child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: <Widget>[
+                          SizedBox(
+                            height: 50,
+                            child: Card(
+                              color: Colors.limeAccent,
+                              child: Text(
+                                "Transaction Info",
+                                style:
+                                    TextStyle(fontSize: 25, color: Colors.teal),
+                              ),
+                            ),
+                          ),
+                          SizedBox(
+                            height: 50,
+                            child: Card(
+                              color: Colors.limeAccent,
+                              child: Text(
+                                "06/11/2023",
+                                style:
+                                    TextStyle(fontSize: 25, color: Colors.teal),
+                              ),
+                            ),
+                          )
+                        ])),
+                    Expanded(
+                        child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: <Widget>[
+                          SizedBox(
+                            height: 50,
+                            child: Card(
+                              color: Colors.limeAccent,
+                              child: Text(
+                                "Transaction Info",
+                                style:
+                                    TextStyle(fontSize: 25, color: Colors.teal),
+                              ),
+                            ),
+                          ),
+                          SizedBox(
+                            height: 50,
+                            child: Card(
+                              color: Colors.limeAccent,
+                              child: Text(
+                                "06/11/2023",
+                                style:
+                                    TextStyle(fontSize: 25, color: Colors.teal),
+                              ),
+                            ),
+                          )
+                        ]))
+                  ]),
                 )),
           ]),
+          bottomNavigationBar: ButtonBar(
+              buttonHeight: 20,
+              buttonPadding: EdgeInsets.all(20),
+              overflowButtonSpacing: 20,
+              alignment: MainAxisAlignment.start,
+              children: [
+                IconButton(
+                  icon: Icon(Icons.arrow_back),
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/');
+                  },
+                ),
+                IconButton(
+                    onPressed: () {
+                      print("You pressed Transactions");
+                    },
+                    icon: Icon(Icons.list))
+              ]),
         ));
   }
 }
