@@ -44,7 +44,7 @@ class SettingsPage extends StatelessWidget {
             ),
             title: Text("P R O F I L E"),
             onTap: () {
-              print("you Pressed Profile");
+              Navigator.pushNamed(context, '/profilepage');
             },
           ),
           ListTile(

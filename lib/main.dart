@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutterapp/pages/home_page.dart';
 import 'package:flutterapp/pages/settings_page.dart';
+import 'package:flutterapp/pages/profile_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -20,6 +21,7 @@ class MyApp extends StatelessWidget {
       routes: {
         '/homepage': (context) => HomePage(),
         '/settingspage': (context) => SettingsPage(),
+        '/profilepage': (context) => ProfilePage(),
       },
     );
   }
