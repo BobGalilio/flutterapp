@@ -9,18 +9,68 @@ class ProfilePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        backgroundColor: Colors.teal,
-        body: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Center(
-              child: CircleAvatar(
-                child: Image.network(
-                    "https://images-workbench.99static.com/VW9gHVoyoSouVPUety8NrzIZMOE=/99designs-contests-attachments/66/66392/attachment_66392192"),
+      home: SafeArea(
+        child: Scaffold(
+          backgroundColor: Colors.teal,
+          body: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Center(
+                  child: CircleAvatar(radius: 50, child: Icon(Icons.person))),
+              Center(
+                  child: Card(
+                margin: EdgeInsets.all(30),
+                color: Colors.white70,
+                elevation: 12,
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(5)),
+                child: TextField(
+                  textAlign: TextAlign.center,
+                  decoration: InputDecoration(
+                    labelText: "Name",
+                  ),
+                ),
+              )),
+              Center(
+                child: Card(
+                  color: Colors.white70,
+                  elevation: 12,
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(5)),
+                  child: Text(
+                    "ahmed.abdalgalil@healthpay.com.eg",
+                    style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+                  ),
+                ),
               ),
-            )
-          ],
+              Container(
+                height: 40,
+                width: 300,
+                color: Colors.white,
+                child: Center(
+                  child: Card(
+                    color: Colors.white70,
+                    elevation: 12,
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(5)),
+                    child: Text(
+                      "01062043505",
+                      style:
+                          TextStyle(fontSize: 36, fontWeight: FontWeight.bold),
+                    ),
+                  ),
+                ),
+              ),
+              ElevatedButton(
+                  onPressed: () {
+                    print("changes Saved");
+                  },
+                  child: Text(
+                    "Save Changes",
+                    style: TextStyle(fontSize: 20),
+                  ))
+            ],
+          ),
         ),
       ),
     );
