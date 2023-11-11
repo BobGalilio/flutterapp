@@ -8,23 +8,9 @@ class SettingsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.limeAccent,
+        backgroundColor: Colors.blueGrey[100],
         appBar: AppBar(
-          title: const Text('Flutter App'),
-          actions: [
-            IconButton(
-              icon: const Icon(
-                Icons.logout,
-                size: 40,
-              ),
-              onPressed: () {
-                print("You logged out");
-              },
-              padding: const EdgeInsets.only(
-                right: 20,
-              ),
-            ),
-          ],
+          title: const Text('S E T T I N G S'),
           backgroundColor: Colors.blueGrey,
         ),
         body: ListView(children: <Widget>[

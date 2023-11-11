@@ -11,15 +11,46 @@ class ProfilePage extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: SafeArea(
         child: Scaffold(
-          backgroundColor: Colors.teal,
+          backgroundColor: Colors.blueGrey[100],
+          appBar: AppBar(
+            backgroundColor: Colors.blueGrey,
+            leading: IconButton(
+              icon: Icon(Icons.arrow_back),
+              onPressed: () =>
+                  Navigator.popAndPushNamed(context, '/settingspage'),
+            ),
+            title: Text('P R O F I L E'),
+            actions: [
+              IconButton(
+                icon: const Icon(
+                  Icons.logout,
+                  size: 40,
+                ),
+                onPressed: () {
+                  print("You logged out");
+                },
+                padding: const EdgeInsets.only(
+                  right: 20,
+                ),
+              ),
+            ],
+          ),
           body: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Center(
-                  child: CircleAvatar(radius: 50, child: Icon(Icons.person))),
+                  child: CircleAvatar(
+                radius: 50,
+                backgroundColor: Colors.blueGrey,
+                child: Icon(
+                  Icons.person,
+                  color: Colors.blueGrey[800],
+                  size: 60,
+                ),
+              )),
               Center(
                   child: Card(
-                margin: EdgeInsets.all(30),
+                margin: EdgeInsets.fromLTRB(20, 40, 20, 10),
                 color: Colors.white70,
                 elevation: 12,
                 shape: RoundedRectangleBorder(
@@ -27,47 +58,48 @@ class ProfilePage extends StatelessWidget {
                 child: TextField(
                   textAlign: TextAlign.center,
                   decoration: InputDecoration(
-                    labelText: "Name",
+                    labelText: "   Name",
                   ),
                 ),
               )),
               Center(
-                child: Card(
-                  color: Colors.white70,
-                  elevation: 12,
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(5)),
-                  child: Text(
-                    "ahmed.abdalgalil@healthpay.com.eg",
-                    style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
-                  ),
-                ),
-              ),
-              Container(
-                height: 40,
-                width: 300,
-                color: Colors.white,
-                child: Center(
                   child: Card(
-                    color: Colors.white70,
-                    elevation: 12,
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(5)),
-                    child: Text(
-                      "01062043505",
-                      style:
-                          TextStyle(fontSize: 36, fontWeight: FontWeight.bold),
-                    ),
+                margin: EdgeInsets.fromLTRB(20, 10, 20, 10),
+                color: Colors.white70,
+                elevation: 12,
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(5)),
+                child: TextField(
+                  textAlign: TextAlign.center,
+                  decoration: InputDecoration(
+                    labelText: "   Email",
                   ),
                 ),
-              ),
-              ElevatedButton(
+              )),
+              Center(
+                  child: Card(
+                margin: EdgeInsets.fromLTRB(20, 10, 20, 40),
+                color: Colors.white70,
+                elevation: 12,
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(5)),
+                child: TextField(
+                  textAlign: TextAlign.center,
+                  decoration: InputDecoration(
+                    labelText: "   Phone Number",
+                  ),
+                ),
+              )),
+              FilledButton(
+                  style: ButtonStyle(
+                    backgroundColor: MaterialStateProperty.all(Colors.blueGrey),
+                  ),
                   onPressed: () {
                     print("changes Saved");
                   },
                   child: Text(
                     "Save Changes",
-                    style: TextStyle(fontSize: 20),
+                    style: TextStyle(fontSize: 20, color: Colors.blueGrey[900]),
                   ))
             ],
           ),
