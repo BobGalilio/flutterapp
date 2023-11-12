@@ -1,7 +1,6 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, avoid_print
 
 import 'package:flutter/material.dart';
-import 'package:flutterapp/pages/settings_page.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -18,7 +17,7 @@ class HomePage extends StatelessWidget {
               // leading: Image.network(
               //   "https://w7.pngwing.com/pngs/845/180/png-transparent-unified-payments-interface-bhim-national-payments-corporation-of-india-wallets-text-trademark-logo.png",
               // ),
-              title: const Text('Flutter App'),
+              title: const Text('Payment App'),
               actions: [
                 IconButton(
                   icon: const Icon(
@@ -62,14 +61,12 @@ class HomePage extends StatelessWidget {
               ]),
             ),
             body: Column(children: [
-              SizedBox(
+              Container(
                   height: 400,
                   width: double.infinity,
                   child: Card(
                     margin: const EdgeInsets.all(0),
                     color: Colors.blueGrey[800],
-                    // shape: RoundedRectangleBorder(
-                    //     borderRadius: BorderRadius.circular(16)),
                     child: Center(
                         child: Column(
                       children: [
@@ -84,33 +81,25 @@ class HomePage extends StatelessWidget {
                           margin: EdgeInsets.all(10),
                           child: Column(children: [
                             Padding(
-                              padding: const EdgeInsets.all(10.0),
-                              child: Card(
-                                // shape: BeveledRectangleBorder(
-                                //     borderRadius: BorderRadius.circular(20)),
-                                // margin: EdgeInsets.all(40),
-                                color: Colors.blueGrey[100],
-                                child: Padding(
-                                  padding: const EdgeInsets.all(10.0),
-                                  child: Text("TOTAL BALANCE",
-                                      style: TextStyle(
-                                          fontSize: 35,
-                                          fontWeight: FontWeight.bold,
-                                          color: Colors.blueGrey[800])),
-                                ),
+                              padding: const EdgeInsets.all(40.0),
+                              child: Text(
+                                'TOTAL BALANCE',
+                                style: TextStyle(
+                                    fontSize: 35,
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.blueGrey[800]),
                               ),
                             ),
-                            Card(
-                              color: Colors.blueGrey[100],
-                              child: Padding(
-                                padding: const EdgeInsets.all(10.0),
-                                child: Text("500 EGP",
-                                    style: TextStyle(
-                                        fontSize: 35,
-                                        fontWeight: FontWeight.bold,
-                                        color: Colors.blueGrey[800])),
+                            Padding(
+                              padding: const EdgeInsets.all(10.0),
+                              child: Text(
+                                '500 EGP',
+                                style: TextStyle(
+                                    fontSize: 35,
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.blueGrey[800]),
                               ),
-                            )
+                            ),
                           ]),
                         ),
                         Card(
@@ -615,24 +604,6 @@ class HomePage extends StatelessWidget {
                     // ]),
                   )),
             ]),
-            // bottomNavigationBar: ButtonBar(
-            //     buttonHeight: 20,
-            //     buttonPadding: EdgeInsets.all(20),
-            //     overflowButtonSpacing: 20,
-            //     alignment: MainAxisAlignment.spaceBetween,
-            //     children: [
-            //       IconButton(
-            //         icon: Icon(Icons.arrow_back),
-            //         onPressed: () {
-            //           Navigator.pushNamed(context, '/');
-            //         },
-            //       ),
-            //       IconButton(
-            //           onPressed: () {
-            //             print("You pressed Transactions");
-            //           },
-            //           icon: Icon(Icons.list))
-            //     ]),
           ),
         ));
   }

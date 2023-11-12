@@ -43,9 +43,9 @@ class SettingsPage extends StatelessWidget {
               radius: 50,
               child: Icon(Icons.wallet),
             ),
-            title: Text("W A L L E T"),
+            title: Text("C A R D S"),
             onTap: () {
-              print("you Pressed Wallet");
+              Navigator.pushNamed(context, '/cardspage');
             },
           ),
           ListTile(
