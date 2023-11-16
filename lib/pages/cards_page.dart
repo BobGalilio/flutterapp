@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_credit_card/flutter_credit_card.dart';
+// import 'package:flutter_credit_card/flutter_credit_card.dart';
 
 class CardsPage extends StatelessWidget {
   const CardsPage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    var items = 10;
     return MaterialApp(
         debugShowCheckedModeBanner: false,
         home: SafeArea(
@@ -16,8 +15,7 @@ class CardsPage extends StatelessWidget {
               backgroundColor: Colors.blueGrey,
               leading: IconButton(
                 icon: const Icon(Icons.arrow_back),
-                onPressed: () =>
-                    Navigator.popAndPushNamed(context, '/settingspage'),
+                onPressed: () => Navigator.pop(context, '/settingspage'),
               ),
               title: const Text('C A R D S'),
               actions: [

@@ -16,8 +16,7 @@ class ProfilePage extends StatelessWidget {
             backgroundColor: Colors.blueGrey,
             leading: IconButton(
               icon: Icon(Icons.arrow_back),
-              onPressed: () =>
-                  Navigator.popAndPushNamed(context, '/settingspage'),
+              onPressed: () => Navigator.pop(context, '/settingspage'),
             ),
             title: Text('P R O F I L E'),
             actions: [
